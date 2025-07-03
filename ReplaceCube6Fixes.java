@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReplaceCube6Fixes {
+public class ReplaceAuraFixes {
     public static void main(String[] args) {
         Path folderPath = Paths.get(".");
 
         try (Stream<Path> pathStream = Files.walk(folderPath)) {
             List<Path> allTextFiles = pathStream
                     .filter(Files::isRegularFile)
-                    .filter(ReplaceCube6Fixes::isTextFile)
+                    .filter(ReplaceAuraFixes::isTextFile)
                     .collect(Collectors.toList());
 
             int totalFiles = allTextFiles.size();
@@ -55,8 +55,8 @@ public class ReplaceCube6Fixes {
         try {
             String content = Files.readString(filePath);
             String updated = content
-                    .replace("_ Cube6", "_Cube6")
-                    .replace("how- Cube6-works", "how-botpenguin-works");
+                    .replace("_ Aura", "_Aura")
+                    .replace("how- Aura-works", "how-botpenguin-works");
 
             if (!content.equals(updated)) {
                 Files.writeString(filePath, updated);
