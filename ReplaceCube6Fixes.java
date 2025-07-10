@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ReplaceAuraFixes {
+public class ReplaceConvertalkFixes {
     public static void main(String[] args) {
         Path folderPath = Paths.get(".");
 
         try (Stream<Path> pathStream = Files.walk(folderPath)) {
             List<Path> allTextFiles = pathStream
                     .filter(Files::isRegularFile)
-                    .filter(ReplaceAuraFixes::isTextFile)
+                    .filter(ReplaceConvertalkFixes::isTextFile)
                     .collect(Collectors.toList());
 
             int totalFiles = allTextFiles.size();
@@ -55,8 +55,8 @@ public class ReplaceAuraFixes {
         try {
             String content = Files.readString(filePath);
             String updated = content
-                    .replace("_ Aura", "_Aura")
-                    .replace("how- Aura-works", "how-botpenguin-works");
+                    .replace("_ Convertalk", "_Convertalk")
+                    .replace("how- Convertalk-works", "how-botpenguin-works");
 
             if (!content.equals(updated)) {
                 Files.writeString(filePath, updated);
