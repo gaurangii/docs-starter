@@ -418,8 +418,8 @@
     }
   },
   "logo": {
-    "light": "/logo/Light_and_Dark_Convertalk",
-    "dark": "/logo/Light_and_Dark_Convertalk"
+    "light": "/logo/Light_and_Dark_Convertalk.png",
+    "dark": "/logo/Light_and_Dark_Convertalk.png"
   },
   "navbar": {
     "links": [
