@@ -27,10 +27,7 @@
               "how-Convertalk-works/whatsapp_chatbot",
               "how-Convertalk-works/instagram_chatbot",
               "how-Convertalk-works/facebook_chatbot",
-              "how-Convertalk-works/telegram_chatbot",
-              "how-Convertalk-works/microsoft_teams_bot",
-              "how-Convertalk-works/make_your_live_chat_chatbot"
-            ]
+              "how-Convertalk-works/telegram_chatbot"            ]
           },
           {
             "group": "Edit Your Chatflow",
@@ -376,9 +373,9 @@
             ]
           },
           {
-            "group": "botpenguin Roadmap",
+            "group": "Convertalk Roadmap",
             "pages": [
-              "botpenguin-roadmap/development_timeline"
+              "Convertalk-roadmap/development_timeline"
             ]
           },
           {
