@@ -36,7 +36,6 @@
               "edit-your-chatflow/request_info",
               "edit-your-chatflow/send_info",
               "edit-your-chatflow/trigger_action",
-              "edit-your-chatflow/email_validation",
               "edit-your-chatflow/whatsapp_payment_components"
             ]
           },
@@ -228,10 +227,7 @@
               "inbox/orders",
               "inbox/contacts",
               "inbox/groups",
-              "inbox/real_time_customer_interaction",
-              "inbox/importing_whatsapp_contacts",
-              "inbox/creating_segments",
-              "inbox/using_tags"
+              "inbox/real_time_customer_interaction"
             ]
           },
           {
@@ -244,7 +240,7 @@
             "group": "Teams",
             "pages": [
               "teams/dept",
-              "teams/business_huor",
+              "teams/business_hour",
               "teams/team",
               "teams/role",
               "teams/using_team"
