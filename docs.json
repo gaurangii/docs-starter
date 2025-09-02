@@ -9,6 +9,9 @@
   },
   
   "navigation": {
+     "languages": [
+      {
+        "language": "es",
     "tabs": [
        {
         "tab": "How Convertalk Works?",
@@ -436,4 +439,5 @@
       "linkedin": "https://linkedin.com/company/mintlify"
     }
   }
+     ]
 }
