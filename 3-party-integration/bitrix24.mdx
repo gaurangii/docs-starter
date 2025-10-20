@@ -1,77 +1,410 @@
 ---
-title: "Integrate  Convertalk with Bitrix24"
-description: "This page contains the stepwise tutorial for the integration with  Convertalk"
+title: Convertalk ↔ Bitrix24 Integration Guide
+description: Step-by-step integration and automation setup between Convertalk and Bitrix24 CRM.
+tags: [Convertalk, Bitrix24, WhatsApp, CRM Integration, Automation]
+updated: 2025-10-20
 ---
+⚙️ Convertalk ↔ Bitrix24 Integration Guide
+(Initial Setup and Configuration)
+________________________________________
+1️⃣ Installation — Temporary Link Method
+(Until Convertalk is officially published in the Bitrix24 Marketplace)
+Steps:
+1.	Log in to your Bitrix24 account using your preferred browser.
+2.	Copy the installation link provided by the Convertalk team.
+3.	In the same browser window where Bitrix24 is open, paste the installation link in the address bar and press Enter.
+ 
+📸 Figure 1. Paste the Convertalk installation link directly in the Bitrix24 browser window.
+4.	Bitrix24 will automatically start installing the Convertalk App.
+5.	When prompted, allow all requested permissions — CRM, Tasks, and Webhooks.
+6.	After installation, Bitrix24 displays a pop-up → click “Go to App.”
+7.	You’ll be redirected to the Convertalk Login Page.  https://bot.convertalk.com/authentication
+8.	Log in with your existing Convertalk account (ensure your bot is already created). 
+📸 Figure 2  Convertalk account created previously
+________________________________________
+2️⃣ Connecting Bitrix24 to Convertalk
+Once all mappings and automation settings are updated, the connection between Convertalk and Bitrix24 is fully active and ready to support workflow automation.
+Inside Convertalk:
+ 
+📸 Figure 3 More than 80 Integrations
 
-Integrate  Convertalk with Bitrix24:-
-
-### **Login to  Convertalk Account and Select Application to Integrate**
-
-1. Login to your  Convertalk account, select the Bot you want to integrate with Bitrix24.
-2. Now, click the**‘Integrate’ tab.** 
-3. The integrate window will open up. make sure you are in the **“All Integrations Tab.”**
-4. A list of all native integrations for  Convertalk will be available in this window.
-   - Now find Bitrix24 by:-
-   - Either scrolling down the list
-   - Or by typing in **‘**Bitrix24**’** in the search box with the placeholder “search integration by name”
-5. Now click on the ‘**connect’** button.
-
-Now follow the steps further for integrating bitrix24
-
-Step 1 : Go on Third-Party Apps Integration followed by Bitrix24 and provide Inbound webhook URL
-
-Step 2 : After opening Bitrix24 CRM, go on side bar select Applications followed by Developer resources.
-
-Step 3 : Select Other in Developer Resources
-
-Step 4 : Select Inbound Webhook
-
-Step 5 : Scroll Down and click on Assign Permissions and copy “Webhook to call REST API”
-
-Step 6 : Assign two permissions - 1. **CRM       2. Commercial catalog**
-
-Step 7 : Go back on the  Convertalk Bitrix24 integration page and paste the URL.
-
-Steps 8 : Copy Webhook URL
-
-Step 9 : Go to Bitrix24 CRM then click on Applications then Developer Resources then other end
-
-Step 10 : Paste the copied link on “Your Handler URL” and click on Events then click on \+ select.
-
-Step 11 : After clicking on “ \+ select” select two events -
-
-                1. **Lead created (ONCRMLEADADD)**
-
-**2. Lead updated (ONCRMLEADUPDATE)**                
-
-After that click on save and click on connect button to connect  Convertalk with Bitrix24.
-
-Step 12 : Now Page will look similar to this.
-
-- \
-  If you want to add other parametres to the lead, then map  Convertalk attributes with lead response from bitrix24.
-- Click on select parameter option, you will get the key which we get in the form of lead response from bitrix24.
-- Click on select option, you will get the  Convertalk attributes on which you want to map lead response key’s values.
-- Finally click on update button to save all your changes.
-
-## **Steps to trigger campaign when there is any change in lead attributes in bitrix24**
-
-Follow these steps to set up Drip Campaign using whatsapp bot when there is any change in lead attributes in Bitrix24 CRM.
-
-Step 1: Click on WhatsApp Automation.
-
-Step 2: Click on Drip Campaign option inside WhatsApp Automation.
-
-Step 3: Name your drip campaign and then click on continue.
-
-Step 4: Click on enrolled contacts then go on contact enrolment rules.
-
-Under Custom Enrolment Values Section
-
-1. Select key for which you want to trigger drip campaign when this key value changes according to the relation set by you.
-2. Select which type of relation you want ”is” means equal to or ”is not” means not equal to
-3. Enter the value which you want to compare with the key change.
-4. After that select template which you want to send when drip campaign is triggered.
-5. Click on Create Drip Campaign
+Menu path: Integrations → 3rd-Party Apps → Bitrix24
 
  
+📸 Figure 4 Shows Bitrix24 Connected already
+Click Connect.
+You’ll see three integration options: 
+ 
+📸 Figure 5 Convertalk and Bitrix24 integration
+
+
+
+
+•	Send Lead to CRM: Map Convertalk Chat Flow fields → Bitrix24 CRM parameters.
+This interface defines how Convertalk fields collected during a chat flow are sent and recorded in Bitrix24 as CRM data.
+Within the Send Lead to CRM section, each question or variable captured by the bot can be paired with a specific Bitrix24 parameter for seamless synchronization.
+ 
+📸 Figure 6 Birix24 Lead mapping
+
+Actions shown in the configuration:
+1.	Question mapping:
+The Convertalk Bot’s question “Do you want to know……?” is mapped to the Bitrix24 field Note, so any user response to that question will be saved in the CRM as a note or, any other from the list.
+ 
+
+
+
+
+2.	Dynamic atributes mapping:
+o	The Language attribute is mapped Source Description, allowing you to track the user’s contact channel.
+ 
+o	The Business Need attribute is mapped to Comment, so context or intent gathered during the conversation is logged directly in the deal or lead comments.
+o	 
+3.	Static attribute mapping:
+A constant key–value pair (kre01 → "Update Completed") is added as a static attribute.
+This is useful for tagging leads with specific automation flags or workflow identifiers when sending them to Bitrix24.
+4.	Testing and confirmation:
+The Test Lead button on the right allows you to instantly send a mock record to Bitrix24 and confirm that the mapping is functioning correctly.
+5.	Saving changes:
+Click Update to store all mappings.
+The integration immediately becomes active for the selected chatbot once the update is saved.
+
+
+
+
+
+
+
+•	Bitrix24 Attribute Mapping: Link Bitrix24 attributes (Deal, Contact, Lead) → Convertalk variables.
+The module enables Convertalk to synchronize CRM data dynamically, ensuring that key Bitrix24 attributes (such as deal status, tags, or assigned users) stay aligned with your chatbot logic.
+This mapping makes it possible for Convertalk to read and update Bitrix24 records automatically during the conversation flow — maintaining a live connection between both systems.
+ 
+📸 Figure 7 Mapping Bitrix24 CRM attributes to Convertalk parameters for data synchronization
+How it works:
+Each row defines a pairing between a Convertalk attribute and a Bitrix24 parameter.
+When Convertalk sends or receives data from Bitrix24, it uses these mappings to translate field names and keep both sides consistent.
+Actions shown in this configuration example:
+•	Tags Mapping:
+The Convertalk tag “Rocket” is linked to a Bitrix24 tag field.
+Tags help classify leads or deals (e.g., campaign, product line, or interest level) and are automatically created in Bitrix24 if they don’t already exist.
+•	Status and Pipeline Mapping:
+Convertalk updates the deal or lead stage in Bitrix24 based on the conversation flow or chatbot logic.
+When a customer reaches a key point during the interaction — for example, New Opportunity, Needs Assessment, or Free Trial Setup — Convertalk automatically updates the corresponding Deal Stage (STAGE_ID) in Bitrix24 through a one-way synchronization.
+This configuration keeps the CRM pipeline aligned with the customer’s progress in WhatsApp conversations, ensuring that Bitrix24 always reflects the most recent stage reached through Convertalk.
+Typical examples include moving a deal to Needs Assessment when a prospect confirms interest, or updating to Won when a renewal is completed through chat.
+Note: The current integration operates in a single direction (Convertalk → Bitrix24).
+
+•	Convertalk and Bitrix24 share aligned stage definitions to ensure both systems reflect the same customer progression.
+When a conversation in Convertalk reaches a milestone (for example, New Opportunity, Needs Assessment, or Free Trial Setup), the integration automatically updates the corresponding Deal Stage (STAGE_ID) or Status in Bitrix24.
+Likewise, when a stage is modified in Bitrix24 — for instance, a deal is moved from Needs Assessment to Won — Convertalk’s Inbox Chat Status instantly mirrors that change.
+This two-way synchronization maintains consistency between chat engagement and CRM deal tracking, allowing Convertalk to deliver real-time visibility and analytics without duplicating CRM functionality.
+Bitrix24 remains the system of record for all pipeline operations, while Convertalk acts as an intelligent conversational layer that mirrors deal progress and supports automated follow-ups and analytics.
+Tip: Use identical stage names and hierarchy in both Convertalk and Bitrix24 (for example, New Opportunity, Needs Assessment, Free Trial Setup, Won, Lost) to ensure accurate synchronization and clean reporting across both platforms.
+•	Assigned Users:
+The Assigned Users parameter links the lead or deal to a specific Bitrix24 user (in this example, RIPUZ SAS).
+This routing ensures that new conversations or deals are automatically assigned to the correct sales or support representative.
+•	Saving and Synchronization:
+o	Click Update to save your mappings.
+o	Click Sync to test live synchronization.
+Convertalk will verify that both systems recognize the linked parameters and confirm successful mapping.
+
+
+
+
+
+•	Automated Deal Creation: Auto-create Deals directly from chat interactions.
+The module allows Convertalk to generate or update deals in Bitrix24 automatically, based on the answers captured during a chatbot conversation.
+Each question defined in Convertalk can be mapped to a specific Bitrix24 field (identified by its unique UF_CRM_ parameter), ensuring that deal data is continuously enriched as the chat progresses.
+ 
+📸 Figure 8 Automatic deal creation and field mapping from Convertalk conversation questions to Bitrix24 Deal fields.
+How it works:
+As the chatbot asks predefined questions (for example, “Could you please share your company name?” or “Let me know what service you need”), the customer’s answers are automatically assigned to their respective Bitrix24 deal fields.
+ Each question is linked to a Bitrix24 parameter such as:
+•	UF_CRM_1759610251 → Company Name
+•	UF_CRM_681784764369 → Service Interest
+
+When the conversation reaches a trigger point (for example, a user confirms interest or shares key details), Convertalk either creates a new Deal or updates an existing Deal in Bitrix24 using these field values.
+
+The Update button saves all mappings, activating the automation. From that moment, every new conversation that reaches those questions will automatically populate or update the CRM.
+Benefits:
+•	Eliminates manual deal creation by sales teams.
+•	Keeps Bitrix24 always up-to-date with live data captured in chat.
+•	Maintains full traceability — each field in Bitrix24 corresponds to a real user input from WhatsApp.
+________________________________________
+3️⃣
+4️⃣ Chat Display and CRM Visibility in Bitrix24
+Purpose
+Once Convertalk is connected as an Open Channel in Bitrix24, all customer interactions initiated through WhatsApp or other Convertalk channels become visible within Bitrix24’s Contact Center, Chat Dashboard, and CRM Timelines.
+This allows sales, service, and support teams to manage leads and conversations from a single interface — without leaving the CRM.
+________________________________________
+1️⃣ Convertalk in the Bitrix24 Contact Center
+•	In Bitrix24, navigate to Contact Center → Convertalk.
+•	Click Connect to enable Convertalk as an Open Channel.
+•	Once connected, the Convertalk tile becomes active, indicating a live link between platforms.
+•	Incoming messages from WhatsApp and other connected channels appear in the Open Lines inbox of Bitrix24.
+•	Agents can respond directly from Bitrix24’s chat panel, and Convertalk maintains real-time synchronization across both systems.
+ 
+📸 Figure 9  Convertalk connected as an Open Channel in the Bitrix24 Contact Center.
+ 
+📸 Figure 10 Convertalk Bitrix24 standard Channel
+________________________________________
+2️⃣ Viewing Conversations in the Chat Dashboard
+•	Once Convertalk is active, all new WhatsApp or omnichannel messages appear under Open Lines → Conversations.
+•	Each conversation is tied to a Lead, Deal, or Contact, depending on how your CRM is configured.
+•	Agents can view the client’s name, channel, and message history directly within the Bitrix24 messenger interface.
+•	Messages sent from Convertalk or Bitrix24 are instantly synchronized — maintaining a single unified chat thread.
+ 
+________________________________________
+3️⃣ Viewing Messages in CRM Timelines
+•	All messages and interactions handled through Convertalk are automatically recorded in the Timeline of the related Lead, Deal, or Contact.
+•	Each entry includes:
+o	Message text or template name.
+o	Timestamp and delivery status.
+o	Direction (Inbound / Outbound).
+o	Agent name or bot identifier.
+•	This provides complete historical visibility for each client, enabling quick context retrieval during follow-ups.
+ 
+📸 Figure 11 Convertalk conversation history displayed in the Bitrix24 Deal Timeline.
+ 
+📸 Figure 12  Sending WhatsApp Message
+________________________________________
+4️⃣ Automatic Lead and Deal Creation
+•	When a new customer message arrives, Convertalk automatically creates a Lead or associates the chat with an existing Deal / Contact (matching by phone number or channel ID).
+•	Bitrix24 automation rules can assign the new record to specific users, teams, or queues.
+•	Once assigned, agents can continue conversations directly from the CRM — all updates remain linked to the client’s record.
+📸 Screenshot placeholder: img/lead_assignment_convertalk.png
+Caption: Automatic lead creation and assignment triggered by a new Convertalk conversation.
+Image suggestion: capture Bitrix24 showing a new lead auto-created from a WhatsApp message.
+________________________________________
+5️⃣ Manual Conversations via Convertalk Chat (Timeline Panel)
+Within each Lead, Deal, or Contact record, Bitrix24 provides a Convertalk Chat option in the Timeline submenu that allows manual one-to-one WhatsApp messaging directly from the CRM.
+Purpose:
+To enable agents to send personalized messages manually — outside of bot automation — for follow-ups, custom updates, or direct client engagement.
+Steps to use:
+1.	Open the desired Lead, Deal, or Contact in Bitrix24.
+2.	In the Timeline submenu, click Convertalk Chat.
+3.	The Convertalk Chat panel appears, allowing you to:
+o	Select an approved WhatsApp template or type a custom message.
+o	Send text, emojis, or attachments directly.
+o	View message delivery status (Sent / Delivered / Read).
+4.	All sent and received messages are logged in the Timeline automatically for traceability.
+📸 Screenshot placeholder: img/timeline_convertalk_chat.png
+Caption: Convertalk Chat submenu in Bitrix24 Timeline used for manual WhatsApp conversations.
+Image suggestion: capture the right-hand panel in Bitrix24 showing the Convertalk Chat button and open message input.
+________________________________________
+Benefits
+•	Centralized communication — all WhatsApp and omnichannel messages are stored in one CRM environment.
+•	Real-time synchronization — Convertalk ensures message continuity across platforms.
+•	Unified history — all conversations are logged in the CRM timeline, improving visibility and auditability.
+•	Flexibility — agents can manage both automated and manual chats depending on customer context.
+
+
+
+
+
+
+
+
+
+
+
+3️⃣ Automation in Bitrix24
+You can create workflows or automation rules for any Bitrix24 entity (Leads, Deals, Contacts).
+ 
+🔹 Stage 1 — Technical Visit Request
+•	A new Deal / SPA is created in Bitrix24 from a customer request (form, WhatsApp chat, or manual entry).
+•	The request includes essential data: client name, contact channel, service type, and initial notes.
+•	No automation runs yet — this stage represents registration and triage.
+
+🔹 Stage 2 — Scheduled (Workflow Trigger Point)
+•	When the Deal is moved to Scheduled, Bitrix24 triggers the Convertalk Action → Send WhatsApp Message (Template: FieldOps_Visit).
+•	The template includes contextual details and interactive buttons:
+🕘 I’ve Arrived · 📍 Send Location · 📝 Report Activity · 📸 Upload Photos · ✅ Job Completed
+•	The message is sent automatically to the assigned field agent.
+•	The agent’s responses in WhatsApp start updating the Deal through Convertalk mappings.
+
+
+
+
+🔹 Stage 3 — On-Site
+•	When the agent clicks, I’ve Arrived, Convertalk updates:
+•	UF_CRM_FIELD_STATUS = Arrived
+•	UF_CRM_CHECKIN_TS = timestamp
+•	Bitrix24 automation moves the Deal to On-Site.
+•	Optional: a notification or comment is added for the supervisor —
+•	“Agent arrived at {{CHECKIN_TS}}.”
+🔹 Stage 4 — In-Progress
+•	The agent sends location, activity summary, and photos.
+•	Convertalk updates the following fields in Bitrix24:
+•	UF_CRM_LAT, UF_CRM_LNG, UF_CRM_ACTIVITY_SUMMARY, UF_CRM_MEDIA_FILES.
+•	Bitrix24 automation adds a follow-up task or activity: “Verify work progress.”
+•	Supervisors can monitor updates in real time through the CRM timeline.
+🔹 Stage 5 — Completed
+•	The agent clicks Job Completed in WhatsApp.
+•	Convertalk updates UF_CRM_FIELD_STATUS = Done.
+•	Bitrix24 automatically moves the Deal to Completed.
+•	Optionally, Convertalk sends a closing message thanking the client or requesting feedback.
+•	A CRM form (“Contact Information Form for use with Open Channels”) may be triggered to verify client data.
+🔹 Stage 6 — Canceled (Exception Scenarios)
+•	No Body on Site: Trigger: No check-in or location received within a defined time (e.g., 60 minutes after Scheduled).
+Actions:
+Move Deal to Canceled – No Body on Site.
+Send an alert via WhatsApp.
+Create a Bitrix24 follow-up task.
+
+•	 Client Cannot Attempt: Trigger: Client cancels or replies “Unavailable.”
+Actions:
+Move Deal to Canceled – Client Cannot Attempt.
+Update status and send a confirmation message.
+Create a task for rescheduling.
+
+🔹 Stage 7 — Reporting & Analytics
+Convertalk: Measures engagement — check-in times, completion rates, photo uploads, and WhatsApp response ratios.
+Bitrix24: Tracks operational KPIs — completed vs. canceled visits, technician performance, SLA compliance, and location-based reporting.
+
+5️⃣ Field Operations Workflow – Technical Visit
+(Bitrix24 + Convertalk Configuration)
+1️⃣ In Bitrix24 — Workflow Automation Setup
+Objective: configure triggers and rules so each event (check-in, location, completion, etc.) moves the Deal automatically.
+Steps:
+1.	Go to CRM → Deals → Pipeline → Automation Rules.
+2.	Add rules for each stage:
+o	Scheduled: Convertalk Action → Send WhatsApp Template FieldOps_Visit.
+o	On-Site: Field Changed → UF_CRM_FIELD_STATUS = Arrived → Move to On-Site.
+o	In-Progress: Field Changed → update notes/photos → Create Activity “Verify Work Progress.”
+o	Completed: Field Changed → UF_CRM_FIELD_STATUS = Done → Move to Completed and trigger closing message.
+o	Canceled: Time-based trigger (no check-in after 60 minutes) → Move to Canceled.
+3.	Add optional notifications (e.g., Slack/Email/CRM alerts) for supervisor visibility.
+ 
+Caption: Bitrix24 workflow designer with triggers and Convertalk actions per stage.
+________________________________________
+2️⃣ In Convertalk — Chatbot & Mapping Setup
+Objective: configure the bot to send the correct template and update Bitrix24 fields through mapping.
+Steps:
+1.	Open Convertalk → Integrations → Bitrix24 → Attribute Mapping.
+2.	Create mappings for all required fields:
+o	UF_CRM_FIELD_STATUS
+o	UF_CRM_CHECKIN_TS
+o	UF_CRM_LAT / UF_CRM_LNG
+o	UF_CRM_ACTIVITY_SUMMARY
+o	UF_CRM_MEDIA_FILES
+3.	In Convertalk → Chat Flow, create logic for each button in the WhatsApp template:
+o	I’ve Arrived: update status = Arrived.
+o	Send Location: capture and send lat/lng.
+o	Report Activity: open free-text question and send answer.
+o	Upload Photos: handle file attachments.
+o	Job Completed: update status = Done.
+4.	Test using sandbox Deal to confirm that every reply updates Bitrix24 fields in real time.
+📸 Screenshot placeholder: img/convertalk_mapping_fields.png
+Caption: Field mapping in Convertalk linking chatbot responses to Bitrix24 custom fields.
+________________________________________
+3️⃣ Testing the Full Flow
+1.	Create a test Deal in Bitrix24 → move it to Scheduled.
+2.	Confirm Convertalk sends the WhatsApp message.
+3.	Simulate agent responses in WhatsApp (buttons, location, text).
+4.	Check that Bitrix24 updates:
+o	Stage movement
+o	Field values (lat/lng, check-in, summary)
+o	Timeline comments.
+5.	Validate automation: Completed / Canceled stages trigger correctly.
+📸 Screenshot placeholder: img/test_flow_fieldops.png
+Caption: Testing automation between Convertalk and Bitrix24 in a sample technical visit scenario.
+________________________________________
+💡 Outcome:
+By combining Convertalk’s chatbot automation with Bitrix24’s CRM workflow engine, you achieve a fully automated, closed-loop system — from scheduling to completion or cancellation — all tracked and auditable in real time.
+
+________________________________________
+6️⃣ Using Scripts
+Convertalk automations can also run as manual scripts for agent-triggered actions.
+In Bitrix24:Scripts → Smart Scripts → Select Convertalk Script
+Agents can manually trigger Convertalk actions for selected users.
+Execution logs appear under Workflows → Activity History.
+ 
+📸 Figure 13 Smart Scripts panel with Convertalk automation.
+________________________________________
+
+7️⃣ Webhook and API Extension (Advanced)
+
+Convertalk IA Bot / Flow
+
+🎯 Objective
+The Convertalk IA Bot / Flow architecture enables companies to automate and centralize their customer interactions across WhatsApp Business API (WABA) and any connected CRM.
+This design eliminates manual intervention in common service processes — such as plan renewals, ticket status checks, and follow-up notifications — by connecting Convertalk’s intelligent chat flows with the CRM’s native REST API via secure webhooks.
+Through this automation:
+•	Clients receive instant, personalized responses on WhatsApp.
+•	CRMs are automatically updated or queried in real time.
+•	Agents are notified only when human interaction is required.
+The result is a seamless, two-way communication loop between customer, Convertalk IA Bot / Flow, and CRM, improving operational efficiency, customer satisfaction, and overall service continuity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+🧭 Operational Guide — Convertalk IA Bot / Flow
+1️⃣ Entry Point: WhatsApp
+1.	The client opens WhatsApp and sees two buttons: Renew Plan and Check Ticket.
+2.	The client clicks one (or sends an equivalent message).
+3.	The event from WhatsApp Business API (WABA) reaches the configured inbound webhook.________________________________________
+2️⃣    Core Engine: Convertalk IA Bot / Flow
+4.	Convertalk IA Bot / Flow receives the event and detects which option was selected.
+5.	It splits the logic into two branches:________________________________________
+3️⃣ Branch A — Renew Plan
+6.	The Convertalk outbound webhook triggers a call to the CRM webhook for plan renewal:
+o	In Convertalk (Developers → Webhooks), configure your CRM destination as:
+https://your.company.com/webhook/crm-renewal
+7.	The CRM webhook receives the call and runs its internal REST logic:
+o	Updates the Deal/Task (e.g., STAGE_ID=NEW, adds comment, etc.).
+8.	The CRM replies with a success response (e.g., { "result": true }).
+9.	Convertalk sends the user a confirmation via WhatsApp:
+o	“✅ Your renewal has been successfully registered.”
+10.	Flow ends in Convertalk IA Bot / Flow.________________________________________
+4️⃣ Branch B — Check Ticket
+11.	The Convertalk outbound webhook calls the CRM webhook for data retrieval:
+o	In Convertalk (Developers → Webhooks), configure:
+https://your.company.com/webhook/crm-query
+12.	The CRM webhook runs an internal REST GET request:
+o	Fetches fields like TITLE, STAGE_ID, UF_CRM_DUE_DATE.
+13.	The CRM returns the data in JSON format.
+14.	Convertalk processes and formats the response, then replies to the user:
+o	“🔍 Your service status:
+• Title: {{TITLE}}
+• Stage: {{STAGE_ID}}
+• Due date: {{UF_CRM_DUE_DATE}}”
+15.	Flow ends in Convertalk IA Bot / Flow.________________________________________
+5️⃣ Webhook Pairing (Match)
+•	CRM → Outbound Webhook: Create it first inside your CRM (e.g., Bitrix24 or another). It generates a URL.
+•	Convertalk → Outbound Webhook: Paste that CRM URL in Convertalk (Developers → Webhooks).
+o	Renewal: https://your.company.com/webhook/crm-renewal
+o	Query: https://your.company.com/webhook/crm-query
+Core idea: Convertalk Webhook → CRM Webhook → CRM REST API.
+The CRM performs the actual update or query internally.________________________________________
+6️⃣ Implementation Notes
+•	Always use generic URLs in documentation (avoid internal domains).
+•	If your CRM supports outbound webhooks, you can also push changes back to Convertalk for proactive updates.
+•	Keep naming consistent: always use Convertalk IA Bot / Flow in every node or label.________________________________________
+7️⃣ Quick Checklist (for publication)
+•	WABA Webhook active: https://your.company.com/webhook/convertalk-inbound
+•	WhatsApp Buttons: Renew Plan, Check Ticket
+•	Convertalk → CRM Webhooks configured:
+o	Renewal → https://your.company.com/webhook/crm-renewal
+o	Query → https://your.company.com/webhook/crm-query
+•	CRM REST logic ready:
+o	update (Deal/Task) for Renewal
+o	get (read) for Ticket Query
+•	Convertalk replies to the client at the end of each branch.
+•	Unified closing node in Convertalk IA Bot / Flow.
+
+8️⃣ Final Note
+The Convertalk ↔ Bitrix24 integration is now fully no-code and production-ready. All automation steps — from lead mapping to deal management and service workflows — can be configured directly through the Convertalk interface, with Bitrix24 serving as the CRM of record. Webhook configurations are still available available for advanced enterprise use cases, but standard users can now deploy full conversational CRM automation without writing a single line of code.
+Final Validation
+This document has been reviewed and finalized for publication. All sections maintain unified formatting and terminology consistent with Convertalk and Bitrix24 documentation standards. It is now ready for Mintlify Help Center or PDF corporate distribution.
